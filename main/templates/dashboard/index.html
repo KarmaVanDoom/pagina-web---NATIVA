@@ -1,0 +1,139 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+{% block title %}Bionativa — Líderes en Biosoluciones{% endblock %}
+{% block nav_inicio %}active{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- ═══════════════════ HERO ATMOSFÉRICO ═══════════════════ -->
+<section class="hero-nativa">
+    <div class="container-fluid px-lg-5">
+        <div class="row">
+            <div class="col-lg-10">
+                <h1 class="hero-title-big animate-in">
+                    BIO INSUMOS NATIVA FORTALECE SU PRESENCIA GLOBAL TRAS ALIANZA CON SUMITOMO CORPORATION
+                </h1>
+                <div class="mt-5 animate-in animate-delay-2">
+                    <a href="#" class="btn-lime">Conoce Más</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SECCIÓN FILOSOFÍA & LIDERAZGO ═══════════════════ -->
+<section class="leaders-section">
+    <div class="container-fluid px-lg-5">
+        <div class="row g-5 align-items-center">
+
+            <!-- Texto Izquierda -->
+            <div class="col-lg-5">
+                <h2 class="leaders-label mb-5">
+                    <span>LÍDERES EN</span>
+                    BIOSOLUCIONES PARA EL AGRO.
+                </h2>
+
+                <div class="text-center mb-5">
+                    <img src="https://nativa.cl/wp-content/uploads/2023/04/Logo-21-anos-01.png" alt="21 Años"
+                        class="logo-21-anniversary animate-in">
+                </div>
+
+                <!-- Imagen Frutas -->
+                <img src="https://images.unsplash.com/photo-1528821128474-27f963b06295?q=80&w=1000&auto=format&fit=crop"
+                    alt="Cerezas" class="cherry-img shadow-lg animate-in">
+            </div>
+
+            <!-- Citas Derecha -->
+            <div class="col-lg-6 offset-lg-1">
+
+                <div class="quote-block animate-in animate-delay-1">
+                    <p class="quote-text">
+                        "Con más de 20 años de investigación y desarrollo de productos innovadores, Bio insumos Nativa
+                        se ha posicionado en el mercado como una empresa confiable y un referente en la industria de
+                        productos fitosanitarios."
+                    </p>
+                    <div class="quote-author">
+                        Eduardo Donoso
+                        <span>Co-Fundador</span>
+                    </div>
+                </div>
+
+                <div class="quote-block animate-in animate-delay-2">
+                    <p class="quote-text">
+                        "Nuestro propósito es contribuir a la producción de alimentos de calidad y libres de residuos de
+                        pesticidas, con nuestros productos estamos impulsando un gran cambio en la agricultura en Chile
+                        y en el mundo."
+                    </p>
+                    <div class="quote-author">
+                        Paulo Escobar
+                        <span>Co-Fundador</span>
+                    </div>
+                </div>
+
+                <!-- Impact Cards (Horizontal) -->
+                <div class="row g-4 mt-5">
+                    <div class="col-md-6">
+                        <div class="impact-card">
+                            <div class="impact-icon"><i class="bi bi-cpu"></i></div>
+                            <span class="impact-number">+ 1.000</span>
+                            <span class="impact-label">Cepas estudiadas</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="impact-card">
+                            <div class="impact-icon"><i class="bi bi-award"></i></div>
+                            <span class="impact-number">+ 20</span>
+                            <span class="impact-label">Años de trayectoria</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SECCIÓN PRODUCTOS (CARDS) ═══════════════════ -->
+<section class="section-arch bg-light">
+    <div class="container-fluid px-lg-5">
+        <div class="row mb-5">
+            <div class="col-lg-6">
+                <h2 class="section-title">Innovación en cada aplicación.</h2>
+                <p class="text-secondary">Descubre nuestro catálogo de soluciones biológicas diseñadas para maximizar el
+                    rendimiento de tus cultivos de forma sostenible.</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card-premium">
+                    <div class="card-icon"><i class="bi bi-shield-check"></i></div>
+                    <h3>Biocontroladores</h3>
+                    <p>Microorganismos que combaten plagas y enfermedades de forma natural y efectiva.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-premium">
+                    <div class="card-icon"><i class="bi bi-flower1"></i></div>
+                    <h3>Bioestimulantes</h3>
+                    <p>Potencia el vigor y la resistencia de las plantas ante el estrés ambiental.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-premium">
+                    <div class="card-icon"><i class="bi bi-droplet"></i></div>
+                    <h3>Inoculantes</h3>
+                    <p>Mejora la nutrición y la salud del suelo para cosechas más abundantes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

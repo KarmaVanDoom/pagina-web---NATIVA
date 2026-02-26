@@ -1,0 +1,254 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% block meta_description %}Sistema Jairo{% endblock %}">
+    <title>{% block title %}Sistema Jairo{% endblock %}</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- CSS Global del sistema -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+
+    <!-- ══════════ NAVBAR (NATIVO CLEAN) ══════════ -->
+    <nav class="navbar-nature">
+        <div class="container-fluid px-lg-5">
+            <div class="d-flex align-items-center justify-content-between">
+
+                <!-- Logo -->
+                <a href="{% url 'main:index' %}" class="navbar-brand d-flex align-items-center">
+                    <img src="{% static 'img/logo_insumo_nativa.JPG' %}" alt="Nativa Bioinsumos"
+                        class="navbar-brand-img">
+                </a>
+
+                <!-- Menú Desktop -->
+                <div class="d-none d-lg-flex align-items-center gap-1">
+                    <a href="{% url 'main:index' %}" class="nav-link-arch active">Inicio</a>
+                    <a href="javascript:void(0)" class="nav-link-arch" id="btn-mega-menu">Explorar <i
+                            class="bi bi-chevron-down ms-1"></i></a>
+                    <a href="#" class="nav-link-arch">Noticias</a>
+                    <a href="#" class="nav-link-arch">Contacto</a>
+                </div>
+
+                <!-- CTA (Ingreso) -->
+                <div class="d-flex align-items-center gap-3">
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}" class="btn-arch" style="padding: 8px 18px; font-size: 0.8rem;">Salir
+                        ({{ user.username }})</a>
+                    {% else %}
+                    <a href="{% url 'login' %}" class="btn-arch"
+                        style="padding: 8px 18px; font-size: 0.8rem;">Ingresar</a>
+                    {% endif %}
+
+                    <button class="navbar-toggler d-lg-none border-0" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navMobile">
+                        <i class="bi bi-list fs-2" style="color: var(--primary-green);"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- MEGA NAV OVERLAY (Estilo Accordion de la Imagen) -->
+            <div class="mega-nav-overlay" id="megaNav">
+                <div class="accordion-nav-wrapper">
+                    <!-- Item 1: Nosotros -->
+                    <div class="accordion-item">
+                        <div class="accordion-bg"
+                            style="background-image: url('https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=1000&auto=format&fit=crop');">
+                        </div>
+                        <div class="accordion-overlay"></div>
+                        <div class="accordion-content">
+                            <h4 class="accordion-title">Nosotros</h4>
+                            <p class="accordion-desc">Más de 20 años innovando en biotecnología agrícola.</p>
+                        </div>
+                    </div>
+                    <!-- Item 2: Productos -->
+                    <div class="accordion-item">
+                        <div class="accordion-bg"
+                            style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1000&auto=format&fit=crop');">
+                        </div>
+                        <div class="accordion-overlay"></div>
+                        <div class="accordion-content">
+                            <h4 class="accordion-title">Productos</h4>
+                            <p class="accordion-desc">Soluciones biológicas para un campo más sano.</p>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="accordion-item">
+                        <div class="accordion-bg"
+                            style="background-image: url('https://images.unsplash.com/photo-1535090467336-9501f96eef89?q=80&w=1000&auto=format&fit=crop');">
+                        </div>
+                        <div class="accordion-overlay"></div>
+                        <div class="accordion-content">
+                            <h4 class="accordion-title">Cultivos</h4>
+                            <p class="accordion-desc">Asesoría especializada para cada tipo de siembra.</p>
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="accordion-item">
+                        <div class="accordion-bg"
+                            style="background-image: url('https://images.unsplash.com/photo-1530648672449-81f6c723e2f1?q=80&w=1000&auto=format&fit=crop');">
+                        </div>
+                        <div class="accordion-overlay"></div>
+                        <div class="accordion-content">
+                            <h4 class="accordion-title">Certificaciones</h4>
+                            <p class="accordion-desc">Calidad garantizada bajo estándares internacionales.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-bg"
+                            style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop');">
+                        </div>
+                        <div class="accordion-overlay"></div>
+                        <div class="accordion-content">
+                            <h4 class="accordion-title">Equipo</h4>
+                            <p class="accordion-desc">El talento humano detrás de la ciencia bionativa.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="collapse" id="navMobile">
+                <div class="pt-3 pb-2">
+                    <a href="{% url 'main:index' %}" class="nav-link-arch d-block py-2">Inicio</a>
+                    <a href="#" class="nav-link-arch d-block py-2">Quienes somos</a>
+                    <a href="#" class="nav-link-arch d-block py-2">Productos</a>
+                    <a href="#" class="nav-link-arch d-block py-2">Cultivos</a>
+                    <a href="#" class="nav-link-arch d-block py-2">Certificaciones</a>
+                    <a href="#" class="nav-link-arch d-block py-2">Equipo</a>
+                    <a href="#" class="nav-link-arch d-block py-2">Noticias</a>
+                    <a href="#" class="nav-link-arch d-block py-2">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Fondo oscurecido para el Mega Menú -->
+    <div class="mega-menu-dimmer" id="megaDimmer"></div>
+
+    <!-- ══════════ MENSAJES DJANGO ══════════ -->
+    {% if messages %}
+    <div class="container mt-3">
+        {% for message in messages %}
+        <div class="alert alert-django {{ message.tags }} d-flex align-items-center gap-2 mb-2" role="alert">
+            <i
+                class="bi {% if message.tags == 'error' %}bi-x-circle{% elif message.tags == 'success' %}bi-check-circle{% else %}bi-info-circle{% endif %}"></i>
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- ══════════ CONTENIDO ══════════ -->
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- ══════════ FOOTER ══════════ -->
+    <footer class="footer-arch">
+        <div class="container">
+            <div class="row g-5">
+
+                <!-- Datos de contacto -->
+                <div class="col-12 col-lg-4">
+                    <h4 class="footer-heading">Datos de contacto</h4>
+                    <div class="footer-link">
+                        <i class="bi bi-geo-alt"></i>
+                        <span>Parcela Antilhue, lote 4B, 3530000, Maule</span>
+                    </div>
+                    <div class="footer-link">
+                        <i class="bi bi-telephone"></i>
+                        <span>+56 712970696</span>
+                    </div>
+                    <div class="footer-link">
+                        <i class="bi bi-envelope"></i>
+                        <span>bionativa@bionativa.cl</span>
+                    </div>
+
+                    <div class="mt-5">
+                        <h4 class="footer-heading" style="margin-bottom: 1.5rem;">Visita nuestras redes</h4>
+                        <div class="d-flex gap-4">
+                            <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Consultas -->
+                <div class="col-12 col-lg-5 offset-lg-1">
+                    <h4 class="footer-heading">Consultas</h4>
+                    <p
+                        style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2.5rem; color: rgba(255,255,255,0.9);">
+                        Contáctanos para consultas e inquietudes.<br>
+                        Respondemos rápidamente por cualquier medio.<br>
+                        ¡Gracias por elegirnos como tus socios!
+                    </p>
+                    <a href="tel:+56712970696" class="footer-btn-orange">
+                        <i class="bi bi-telephone-fill"></i>
+                        +56 712970696
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                    <span>Copyright © 2023. Bionativa, todos los derechos reservados.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ══════════ SCRIPTS ══════════ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('animate-in'); });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+
+        // Mega Menu Logic
+        const btnMega = document.getElementById('btn-mega-menu');
+        const megaNav = document.getElementById('megaNav');
+        const megaDimmer = document.getElementById('megaDimmer');
+
+        btnMega.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = megaNav.classList.toggle('open');
+            btnMega.classList.toggle('active');
+            megaDimmer.classList.toggle('active', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+
+        const closeMega = () => {
+            megaNav.classList.remove('open');
+            btnMega.classList.remove('active');
+            megaDimmer.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        megaDimmer.addEventListener('click', closeMega);
+
+        document.addEventListener('click', (e) => {
+            if (!megaNav.contains(e.target) && e.target !== btnMega) {
+                closeMega();
+            }
+        });
+    </script>
+
+    {% block extra_js %}{% endblock %}
+</body>
+
+</html>

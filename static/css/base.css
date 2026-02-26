@@ -1,0 +1,375 @@
+/* ==========================================================================
+   BASE.CSS — Estilos globales "Nature Clean" (Bionativa)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* Paleta Nature Premium (Bionativa Reference) */
+    --bg-body: #ffffff;
+    --bg-section: #f4f7f4;
+    --bg-card: #ffffff;
+    --text-primary: #2d2d2d;
+    --text-secondary: #666666;
+    --primary-green: #2fac4e;
+    /* Verde brillante Nativa */
+    --secondary-orange: #ff8c42;
+    --accent-lime: #c3d62d;
+    /* Verde lima botón */
+    --border-color: #e5eee5;
+    --radius: 4px;
+    /* Bordes más rectos y modernos */
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ─── NAVBAR (INTERACTIVO & AMIGABLE) ─── */
+.navbar-nature {
+    background-color: #ffffff;
+    padding: 0.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+    /* Mayor z-index para estar sobre todo */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    border-bottom: 3px solid var(--accent-lime);
+    transition: var(--transition);
+}
+
+.navbar-brand-img {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover .navbar-brand-img {
+    transform: scale(1.05);
+    /* Saludo visual al pasar sobre el logo */
+}
+
+/* Enlaces con animación de subrayado */
+.nav-link-arch {
+    color: var(--text-primary) !important;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.6rem 1.2rem !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    position: relative;
+    border-radius: 4px;
+}
+
+.nav-link-arch::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 5px;
+    left: 50%;
+    background-color: var(--secondary-orange);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link-arch:hover {
+    color: var(--secondary-orange) !important;
+    background-color: rgba(255, 140, 66, 0.05);
+    /* Fondo muy sutil al hover */
+}
+
+.nav-link-arch:hover::after {
+    width: 60%;
+    /* El subrayado crece desde el centro */
+}
+
+.nav-link-arch.active {
+    color: var(--secondary-orange) !important;
+}
+
+.nav-link-arch.active::after {
+    width: 60%;
+}
+
+/* ─── MEGA NAV OVERLAY ─── */
+.mega-nav-overlay {
+    position: fixed;
+    top: 119px;
+    /* Alineación bajo la línea lima */
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #fff;
+    z-index: 1500;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.85, 0, 0.15, 1);
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.mega-nav-overlay.open {
+    height: 480px;
+}
+
+/* Dimmer para el fondo */
+.mega-menu-dimmer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1400;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(4px);
+}
+
+.mega-menu-dimmer.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.accordion-nav-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.accordion-item {
+    flex: 1;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer;
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.accordion-item:hover {
+    flex: 3;
+}
+
+.accordion-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.8s ease;
+}
+
+.accordion-item:hover .accordion-bg {
+    transform: scale(1.1);
+}
+
+.accordion-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.8) 100%);
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.accordion-item:hover .accordion-overlay {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%);
+}
+
+.accordion-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 2.5rem;
+    width: 100%;
+    color: #fff;
+    transform: translateY(20px);
+    transition: transform 0.5s ease;
+}
+
+.accordion-item:hover .accordion-content {
+    transform: translateY(0);
+}
+
+.accordion-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent-lime);
+}
+
+.accordion-desc {
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.4s ease 0.2s;
+    max-width: 300px;
+}
+
+.accordion-item:hover .accordion-desc {
+    opacity: 1;
+}
+
+
+/* ─── LAYOUT ─── */
+.main-content {
+    flex: 1;
+}
+
+/* ─── SECCIONES ─── */
+.section-arch {
+    padding: 6rem 0;
+    background-color: var(--bg-body);
+}
+
+.section-arch:nth-child(even) {
+    background-color: var(--bg-section);
+}
+
+.section-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 2rem;
+}
+
+/* ─── BOTONES ─── */
+/* ─── BOTONES ─── */
+.btn-arch {
+    color: #fff;
+    background-color: var(--primary-green);
+    border: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 50px;
+    /* Bordes redondeados para un look más amigable */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(20, 92, 20, 0.2);
+}
+
+.btn-arch:hover {
+    background-color: var(--secondary-orange);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(255, 140, 66, 0.3);
+    color: #fff;
+}
+
+.btn-arch:active {
+    transform: translateY(-1px);
+}
+
+
+/* ─── CARDS ─── */
+.card-premium {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 2.5rem;
+    height: 100%;
+    transition: var(--transition);
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.card-premium:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-lime);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: var(--accent-lime);
+    margin-bottom: 1.5rem;
+}
+
+.card-premium h3 {
+    color: var(--primary-green);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* ─── FOOTER ─── */
+.footer-arch {
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1501004847514-0cba0c5a019a?q=80&w=2000&auto=format&fit=crop') center/cover;
+    padding: 5rem 0 2rem;
+    color: #fff;
+}
+
+.footer-heading {
+    color: var(--secondary-orange);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.footer-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 10px;
+}
+
+.footer-link i {
+    color: var(--secondary-orange);
+}
+
+.footer-btn-orange {
+    background-color: var(--secondary-orange);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    gap: 10px;
+}
+
+/* ─── ALERTAS ─── */
+.alert-django {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--primary-green);
+    padding: 1rem;
+    border-radius: var(--radius);
+}
+
+.alert-django.error {
+    border-left-color: #dc3545;
+}
+
+.alert-django.success {
+    border-left-color: #28a745;
+}
