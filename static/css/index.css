@@ -50,10 +50,41 @@
 
 /* ─── SECCIÓN FILOSOFÍA (MISIÓN / VISIÓN) ─── */
 .section-philosophy .card-modern {
-    border: none;
+    border: 2px solid var(--primary-green);
+    background: rgba(47, 172, 78, 0.03);
+    /* Fondo verde muy sutil */
+    border-radius: 60px;
+    /* Bordes mucho más redondeados */
+    padding: 1rem;
+    /* Padding reducido aquí para dejar que card-body lo maneje o viceversa */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    /* Centrar texto para reforzar la "forma" */
+}
+
+.section-philosophy .card-body {
+    padding: 3rem !important;
+}
+
+.section-philosophy .card-modern:hover {
+    transform: translateY(-10px);
     background: #ffffff;
-    box-shadow: var(--shadow-sm);
-    border-top: 5px solid var(--primary-green);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-green);
+}
+
+.section-philosophy .card-modern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: var(--primary-green);
 }
 
 .bg-lime-subtle {

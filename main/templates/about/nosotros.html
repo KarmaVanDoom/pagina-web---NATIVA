@@ -1,0 +1,62 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+{% block title %}Nosotros | Bio Insumos Nativa{% endblock %}
+
+{% block content %}
+<!-- ═══════════════════ HERO NOSOTROS (SOMOS BIO INSUMOS NATIVA) ═══════════════════ -->
+<section class="py-5 bg-light border-bottom">
+    <div class="container py-5 text-center">
+        <span class="badge bg-lime-subtle text-primary-green mb-3 px-3 py-2 rounded-pill fw-bold animate-in-init"
+            data-animate>Somos Bio Insumos Nativa</span>
+        <h1 class="display-3 fw-bold text-primary-green animate-in-init" data-animate>Productos biológicos para una
+            agricultura sustentable</h1>
+        <p class="lead text-secondary mx-auto animate-in-init fst-italic mt-4" style="max-width: 900px;" data-animate>
+            "Es una empresa biotecnológica creada en el año 2002 dedicada al desarrollo, producción y comercialización
+            de insumos biológicos para la agricultura."
+        </p>
+    </div>
+</section>
+
+<!-- ═══════════════════ SECCIÓN PIONEROS & EXPERTOS ═══════════════════ -->
+<section class="py-5">
+    <div class="container py-5">
+        <div class="row g-5">
+            <!-- Pioneros en Biotecnología -->
+            <div class="col-lg-6 animate-in-init" data-animate>
+                <div class="card-modern h-100 p-5 bg-white shadow-sm border-0"
+                    style="border-radius: 40px; border-left: 6px solid var(--primary-green) !important;">
+                    <h2 class="h3 fw-bold mb-4 text-primary-green">Somos pioneros en biotecnología en la agricultura
+                    </h2>
+                    <p class="text-secondary leading-relaxed">
+                        Durante más de 20 años hemos desarrollado, producido y comercializado insumos agrícolas
+                        biológicos como una opción sustentable y efectiva para una producción de alimentos eficiente, de
+                        calidad y libres de residuos.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Expertos en Soluciones -->
+            <div class="col-lg-6 animate-in-init" data-animate>
+                <div class="card-modern h-100 p-5 bg-white shadow-sm border-0"
+                    style="border-radius: 40px; border-left: 6px solid var(--secondary-orange) !important;">
+                    <h2 class="h3 fw-bold mb-4 text-primary-green">Somos expertos en soluciones biológicas</h2>
+                    <p class="text-secondary leading-relaxed">
+                        Nos caracterizamos por tener una amplia gama de productos para distintas necesidades. Hacemos
+                        una extensa investigación, de alrededor de 3 años, para lograr desarrollar productos de calidad,
+                        con efectividad comprobada.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Imagen de laboratorio -->
+        <div class="row mt-5 pt-4">
+            <div class="col-12 animate-in-init" data-animate>
+                <img src="{% static 'img/hero_lab.png' %}" alt="Biotecnología Nativa"
+                    class="img-fluid rounded-4 shadow-lg w-100" style="max-height: 500px; object-fit: cover;">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
