@@ -10,126 +10,125 @@
 
 {% block content %}
 
-<!-- ═══════════════════ HERO ATMOSFÉRICO ═══════════════════ -->
-<section class="hero-nativa">
+<!-- ═══════════════════ SECCIÓN HERO (HISTORIA & FUNDACIÓN) ═══════════════════ -->
+<section class="section-promo py-5">
     <div class="container-fluid px-lg-5">
-        <div class="row">
-            <div class="col-lg-10">
-                <h1 class="hero-title-big animate-in">
-                    BIO INSUMOS NATIVA FORTALECE SU PRESENCIA GLOBAL TRAS ALIANZA CON SUMITOMO CORPORATION
-                </h1>
-                <div class="mt-5 animate-in animate-delay-2">
-                    <a href="#" class="btn-lime">Conoce Más</a>
+        <div class="row align-items-center g-5">
+            <!-- Imagen (Izquierda) -->
+            <div class="col-lg-7">
+                <div class="promo-img-wrapper animate-in-init" data-animate>
+                    <img src="{% static 'img/Mesa-de-trabajo-8-2048x1536-1.jpg' %}" alt="Biotecnología Nativa"
+                        class="img-fluid rounded-4 shadow-lg">
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════════════════ SECCIÓN FILOSOFÍA & LIDERAZGO ═══════════════════ -->
-<section class="leaders-section">
-    <div class="container-fluid px-lg-5">
-        <div class="row g-5 align-items-center">
-
-            <!-- Texto Izquierda -->
+            <!-- Texto (Derecha) -->
             <div class="col-lg-5">
-                <h2 class="leaders-label mb-5">
-                    <span>LÍDERES EN</span>
-                    BIOSOLUCIONES PARA EL AGRO.
-                </h2>
-
-                <div class="text-center mb-5">
-                    <img src="https://nativa.cl/wp-content/uploads/2023/04/Logo-21-anos-01.png" alt="21 Años"
-                        class="logo-21-anniversary animate-in">
-                </div>
-
-                <!-- Imagen Frutas -->
-                <img src="https://images.unsplash.com/photo-1528821128474-27f963b06295?q=80&w=1000&auto=format&fit=crop"
-                    alt="Cerezas" class="cherry-img shadow-lg animate-in">
-            </div>
-
-            <!-- Citas Derecha -->
-            <div class="col-lg-6 offset-lg-1">
-
-                <div class="quote-block animate-in animate-delay-1">
-                    <p class="quote-text">
-                        "Con más de 20 años de investigación y desarrollo de productos innovadores, Bio insumos Nativa
-                        se ha posicionado en el mercado como una empresa confiable y un referente en la industria de
-                        productos fitosanitarios."
+                <div class="promo-text animate-in-init" data-animate>
+                    <span class="badge bg-lime-subtle text-primary-green mb-2 px-3 py-2 rounded-pill fw-bold">Desde 2002
+                        en Chile</span>
+                    <h1 class="display-4 fw-bold mb-3 text-primary-green">Bio Insumos Nativa</h1>
+                    <p class="lead text-secondary mb-4">
+                        Somos una empresa biotecnológica dedicada al desarrollo, producción y comercialización de
+                        insumos biológicos para la agricultura. Con más de 20 años de investigación, somos referentes en
+                        la industria fitosanitaria.
                     </p>
-                    <div class="quote-author">
-                        Eduardo Donoso
-                        <span>Co-Fundador</span>
+                    <div class="d-flex gap-3">
+                        <a href="#contacto" class="btn-arch px-4">Contáctenos</a>
+                        <a href="#filosofia" class="btn-arch-outline px-4">Nuestra Filosofía</a>
                     </div>
                 </div>
-
-                <div class="quote-block animate-in animate-delay-2">
-                    <p class="quote-text">
-                        "Nuestro propósito es contribuir a la producción de alimentos de calidad y libres de residuos de
-                        pesticidas, con nuestros productos estamos impulsando un gran cambio en la agricultura en Chile
-                        y en el mundo."
-                    </p>
-                    <div class="quote-author">
-                        Paulo Escobar
-                        <span>Co-Fundador</span>
-                    </div>
-                </div>
-
-                <!-- Impact Cards (Horizontal) -->
-                <div class="row g-4 mt-5">
-                    <div class="col-md-6">
-                        <div class="impact-card">
-                            <div class="impact-icon"><i class="bi bi-cpu"></i></div>
-                            <span class="impact-number">+ 1.000</span>
-                            <span class="impact-label">Cepas estudiadas</span>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="impact-card">
-                            <div class="impact-icon"><i class="bi bi-award"></i></div>
-                            <span class="impact-number">+ 20</span>
-                            <span class="impact-label">Años de trayectoria</span>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-
         </div>
     </div>
 </section>
 
-<!-- ═══════════════════ SECCIÓN PRODUCTOS (CARDS) ═══════════════════ -->
-<section class="section-arch bg-light">
-    <div class="container-fluid px-lg-5">
-        <div class="row mb-5">
-            <div class="col-lg-6">
-                <h2 class="section-title">Innovación en cada aplicación.</h2>
-                <p class="text-secondary">Descubre nuestro catálogo de soluciones biológicas diseñadas para maximizar el
-                    rendimiento de tus cultivos de forma sostenible.</p>
+<!-- ═══════════════════ BANNER CALL TO ACTION (IMPACTO) ═══════════════════ -->
+<section class="cta-banner-dark animate-in-init" data-animate>
+    <div class="container text-center">
+        <div class="row align-items-center">
+            <div class="col-md-6 border-end border-secondary">
+                <span class="h2 fw-bold d-block text-accent-lime">+ 1.000</span>
+                <span class="text-uppercase small tracking-wider">Cepas estudiadas científicamente</span>
+            </div>
+            <div class="col-md-6">
+                <span class="h2 fw-bold d-block text-accent-lime">+ 20</span>
+                <span class="text-uppercase small tracking-wider">Años de trayectoria innovando</span>
             </div>
         </div>
+    </div>
+</section>
 
+<!-- ═══════════════════ SECCIÓN FILOSOFÍA (MISIÓN/VISIÓN) ═══════════════════ -->
+<section id="filosofia" class="section-philosophy py-5 bg-light">
+    <div class="container-fluid px-lg-5">
         <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card-premium">
-                    <div class="card-icon"><i class="bi bi-shield-check"></i></div>
-                    <h3>Biocontroladores</h3>
-                    <p>Microorganismos que combaten plagas y enfermedades de forma natural y efectiva.</p>
+            <!-- Misión -->
+            <div class="col-md-6">
+                <div class="card-modern h-100 animate-in-init" data-animate>
+                    <div class="card-body p-5">
+                        <div class="mb-4 text-primary-green h1"><i class="bi bi-bullseye"></i></div>
+                        <h2 class="h4 fw-bold mb-3">Nuestra Misión</h2>
+                        <p class="card-text text-secondary">
+                            Desarrollar y producir insumos biológicos de la mas alta calidad, para dar solución a los
+                            problemas fitosanitarios que afectan la producción de alimentos en Chile y en el mundo.
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card-premium">
-                    <div class="card-icon"><i class="bi bi-flower1"></i></div>
-                    <h3>Bioestimulantes</h3>
-                    <p>Potencia el vigor y la resistencia de las plantas ante el estrés ambiental.</p>
+            <!-- Visión -->
+            <div class="col-md-6">
+                <div class="card-modern h-100 animate-in-init" data-animate>
+                    <div class="card-body p-5">
+                        <div class="mb-4 text-primary-green h1"><i class="bi bi-eye"></i></div>
+                        <h2 class="h4 fw-bold mb-3">Nuestra Visión</h2>
+                        <p class="card-text text-secondary">
+                            Ser una empresa biotecnológica que desarrolla, produce y comercializa insumos biológicos
+                            para dar solución a los problemas fitosanitarios de los cultivos en Chile y en el mundo,
+                            contribuyendo a la producción de alimentos sanos y libres de pesticidas.
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card-premium">
-                    <div class="card-icon"><i class="bi bi-droplet"></i></div>
-                    <h3>Inoculantes</h3>
-                    <p>Mejora la nutrición y la salud del suelo para cosechas más abundantes.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SECCIÓN TESTIMONIOS (FUNDADORES) ═══════════════════ -->
+<section class="section-leaders py-5">
+    <div class="container-fluid px-lg-5">
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <div class="quote-card animate-in-init" data-animate>
+                    <p class="h5 fst-italic text-primary-green mb-4">
+                        "Con más de 20 años de investigación y desarrollo de productos innovadores, Bio Insumos Nativa
+                        se ha posicionado como una empresa confiable y un referente en la industria."
+                    </p>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="{% static 'img/people/eduardo_donoso.png' %}" alt="Eduardo Donoso"
+                            class="rounded-circle shadow-sm"
+                            style="width: 70px; height: 70px; object-fit: cover; border: 3px solid var(--primary-green);">
+                        <div>
+                            <h4 class="h6 fw-bold mb-0">Eduardo Donoso</h4>
+                            <small class="text-secondary">Co-Fundador</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="quote-card animate-in-init" data-animate>
+                    <p class="h5 fst-italic text-primary-green mb-4">
+                        "Nuestro propósito es contribuir a la producción de alimentos de calidad y libres de residuos de
+                        pesticidas, impulsado un gran cambio en la agricultura en Chile y el mundo."
+                    </p>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="{% static 'img/people/paulo_escobar.png' %}" alt="Paulo Escobar"
+                            class="rounded-circle shadow-sm"
+                            style="width: 70px; height: 70px; object-fit: cover; border: 3px solid var(--secondary-orange);">
+                        <div>
+                            <h4 class="h6 fw-bold mb-0">Paulo Escobar</h4>
+                            <small class="text-secondary">Co-Fundador</small>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

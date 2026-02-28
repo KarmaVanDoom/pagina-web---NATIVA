@@ -1,146 +1,89 @@
 /* ==========================================================================
-   INDEX.CSS — Estilos inspirados en la referencia Bionativa Premium
+   INDEX.CSS — Estilos para la Plantilla de Bionativa (layout solicitado)
    ========================================================================== */
 
-/* ─── HERO ATMOSFÉRICO ─── */
-.hero-nativa {
-    height: 90vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1592982537447-7440770cbfc9?q=80&w=2000&auto=format&fit=crop') center/cover;
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding-top: 80px;
+/* ─── COLORES LOCALES ─── */
+:root {
+    --text-primary-green: var(--primary-green);
 }
 
-.hero-nativa::before {
-    content: '';
-    position: absolute;
-    top: 15%;
-    left: 8.5%;
-    width: 250px;
-    height: 12px;
-    background-color: var(--accent-lime);
-}
-
-.hero-title-big {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: 800;
-    color: #fff;
-    line-height: 1;
-    text-transform: uppercase;
-    letter-spacing: -1px;
-    max-width: 900px;
-}
-
-.btn-lime {
-    background-color: var(--accent-lime);
-    color: #1a1a1a;
-    padding: 16px 45px;
-    border-radius: 50px;
-    font-weight: 700;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1rem;
-    transition: var(--transition);
-}
-
-.btn-lime:hover {
-    background-color: #d8ec3c;
-    transform: scale(1.05);
-}
-
-/* ─── SECCIÓN LÍDERES (CON CITAS) ─── */
-.leaders-section {
-    padding: 8rem 0;
-}
-
-.leaders-label {
-    font-size: 2.2rem;
-    font-weight: 800;
-    line-height: 1.1;
-    text-transform: uppercase;
-    color: #333;
-}
-
-.leaders-label span {
+.text-primary-green {
     color: var(--primary-green);
-    display: block;
 }
 
-.quote-block {
-    margin-bottom: 4rem;
+/* ─── SECCIÓN PROMO (HERO) ─── */
+.section-promo {
+    background-color: #ffffff;
+    overflow: hidden;
 }
 
-.quote-text {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--primary-green);
-    font-style: italic;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    position: relative;
-    padding-left: 0;
-}
-
-.quote-author {
-    text-align: right;
-    font-size: 1rem;
-    font-weight: 800;
-    color: #333;
-}
-
-.quote-author span {
-    display: block;
-    color: var(--secondary-orange);
-    font-size: 0.85rem;
-    font-weight: 600;
-}
-
-/* ─── CAJAS DE IMPACTO (BLOCKS) ─── */
-.impact-card {
-    background-color: var(--primary-green);
-    color: #fff;
-    padding: 3rem 2rem;
-    text-align: center;
-    border-radius: 4px;
-    transition: var(--transition);
-}
-
-.impact-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
-}
-
-.impact-icon {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.impact-number {
-    font-size: 3.5rem;
-    font-weight: 800;
-    display: block;
-    line-height: 1;
-}
-
-.impact-label {
-    font-size: 1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    opacity: 0.9;
-}
-
-.logo-21-anniversary {
-    width: 280px;
-    height: auto;
-    display: block;
-    margin: 2rem auto;
-}
-
-.cherry-img {
+.promo-img-wrapper img {
     width: 100%;
-    height: 400px;
+    height: auto;
     object-fit: cover;
-    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.promo-img-wrapper:hover img {
+    transform: scale(1.02);
+}
+
+.promo-text h1 {
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+/* ─── BANNER CALL TO ACTION (IMPACTO) ─── */
+.cta-banner-dark {
+    background-color: #5a6268;
+    color: #ffffff;
+    padding: 3rem 0;
+}
+
+.text-accent-lime {
+    color: var(--accent-lime);
+}
+
+.tracking-wider {
+    letter-spacing: 0.1em;
+}
+
+/* ─── SECCIÓN FILOSOFÍA (MISIÓN / VISIÓN) ─── */
+.section-philosophy .card-modern {
+    border: none;
+    background: #ffffff;
+    box-shadow: var(--shadow-sm);
+    border-top: 5px solid var(--primary-green);
+}
+
+.bg-lime-subtle {
+    background-color: rgba(195, 214, 45, 0.15);
+}
+
+/* ─── SECCIÓN LÍDERES (QUOTES) ─── */
+.quote-card {
+    background: #fdfdfd;
+    padding: 3rem;
+    border-radius: 12px;
+    border-left: 8px solid var(--accent-lime);
+    height: 100%;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.quote-card:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-md);
+}
+
+/* ─── ANIMACIONES DE ENTRADA ORGANIZADAS ─── */
+.animate-in-init {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-in-init.animate-in {
+    opacity: 1;
+    transform: translateY(0);
 }
