@@ -11,3 +11,9 @@ def nosotros(request):
     return render(request, 'about/nosotros.html')
 
 
+def productos(request):
+    """Página de Productos."""
+    return render(request, 'product/productos.html')
+
+
+

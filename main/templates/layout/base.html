@@ -59,7 +59,7 @@
                         </div>
                     </a>
                     <!-- Item 2: Productos -->
-                    <div class="accordion-item">
+                    <a href="{% url 'main:productos' %}" class="accordion-item">
                         <div class="accordion-bg"
                             style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1000&auto=format&fit=crop');">
                         </div>
@@ -68,7 +68,7 @@
                             <h4 class="accordion-title">Productos</h4>
                             <p class="accordion-desc">Soluciones biológicas para un campo más sano.</p>
                         </div>
-                    </div>
+                    </a>
                     <!-- Item 3 -->
                     <div class="accordion-item">
                         <div class="accordion-bg"
@@ -141,59 +141,70 @@
         {% block content %}{% endblock %}
     </main>
 
-    <!-- ══════════ FOOTER ══════════ -->
+    <!-- ══════════ FOOTER (BIONATIVA SEGÚN REFERENCIA) ══════════ -->
     <footer class="footer-arch">
-        <div class="container">
-            <div class="row g-5">
+        <div class="container-fluid px-lg-5">
+            <div class="row g-3 align-items-stretch"> <!-- g-3 para menos espacio entre columnas -->
 
-                <!-- Datos de contacto -->
+                <!-- BLOQUE IZQUIERDO: Identity & Contact -->
                 <div class="col-12 col-lg-4">
-                    <h4 class="footer-heading">Datos de contacto</h4>
-                    <div class="footer-link">
-                        <i class="bi bi-geo-alt"></i>
-                        <span>Parcela Antilhue, lote 4B, 3530000, Maule</span>
-                    </div>
-                    <div class="footer-link">
-                        <i class="bi bi-telephone"></i>
-                        <span>+56 712970696</span>
-                    </div>
-                    <div class="footer-link">
-                        <i class="bi bi-envelope"></i>
-                        <span>bionativa@bionativa.cl</span>
-                    </div>
-
-                    <div class="mt-5">
-                        <h4 class="footer-heading" style="margin-bottom: 1.5rem;">Visita nuestras redes</h4>
-                        <div class="d-flex gap-4">
-                            <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
-                            <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
-                            <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
-                            <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                    <div class="row g-2 h-100">
+                        <div class="col-4">
+                            <div class="footer-logo-box d-flex align-items-start pt-2"> <!-- Reducido pt-4 a pt-2 -->
+                                <img src="{% static 'img/logo_insumo_nativa.JPG' %}" alt="Nativa" class="footer-logo">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="footer-box-dark h-100">
+                                <h4 class="footer-heading">CONTACTO</h4>
+                                <div class="footer-link mb-2"> <!-- mb-2 para compactar -->
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <span>Parcela Antilhue, Lote 4B, Maule</span>
+                                </div>
+                                <div class="footer-link mb-2">
+                                    <i class="bi bi-telephone-fill"></i>
+                                    <span>+56 71 297 0696</span>
+                                </div>
+                                <div class="footer-link mb-0">
+                                    <i class="bi bi-envelope-fill"></i>
+                                    <span>bionativa@bionativa.cl</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Consultas -->
-                <div class="col-12 col-lg-5 offset-lg-1">
-                    <h4 class="footer-heading">Consultas</h4>
-                    <p
-                        style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2.5rem; color: rgba(255,255,255,0.9);">
-                        Contáctanos para consultas e inquietudes.<br>
-                        Respondemos rápidamente por cualquier medio.<br>
-                        ¡Gracias por elegirnos como tus socios!
-                    </p>
-                    <a href="tel:+56712970696" class="footer-btn-orange">
-                        <i class="bi bi-telephone-fill"></i>
-                        +56 712970696
-                    </a>
+                <!-- BLOQUE CENTRAL: Redes Sociales -->
+                <div class="col-12 col-lg-4 text-center">
+                    <div class="footer-box-dark h-100">
+                        <h4 class="footer-heading">VISITA NUESTRAS REDES</h4>
+                        <div class="d-flex align-items-center justify-content-center gap-4 py-2 mt-1"> <!-- Reducido py-4 y mt-2 -->
+                            <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BLOQUE DERECHO: Consultas -->
+                <div class="col-12 col-lg-4">
+                    <div class="footer-box-dark h-100">
+                        <h4 class="footer-heading mb-2" style="color: #ff8c42 !important;">Consultas</h4> <!-- mb-2 -->
+                        <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-bottom: 0.8rem;"> <!-- Reducido mb -->
+                            Contáctanos para consultas e inquietudes. Respondemos rápidamente.
+                        </p>
+                        <a href="tel:+56712970696" class="footer-btn-orange w-100 justify-content-center py-2"> <!-- py-2 -->
+                            <i class="bi bi-telephone-fill"></i>
+                            +56 712970696
+                        </a>
+                    </div>
                 </div>
 
             </div>
 
-            <div class="footer-bottom">
-                <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-                    <span>Copyright © 2023. Bionativa, todos los derechos reservados.</span>
-                </div>
+            <div class="footer-bottom mt-3 pt-2"> <!-- Reducido mt y pt -->
+                <span>© 2024 Nativa Bioinsumos. Todos los derechos reservados.</span>
             </div>
         </div>
     </footer>

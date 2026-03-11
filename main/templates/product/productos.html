@@ -1,0 +1,117 @@
+{% extends "layout/base.html" %}
+{% load static %}
+
+{% block title %}Productos - Bionativa{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/productos.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="products-container">
+    <div class="container-fluid px-lg-5">
+        <!-- Header -->
+        <div class="text-center mb-4">
+            <h1 class="display-4 fw-bold mb-3" data-animate>Soluciones Biológicas para la Agricultura</h1>
+            <p class="lead text-secondary mx-auto mb-4" style="max-width: 800px;" data-animate>
+                Descubre nuestra gama de productos innovadores diseñados para potenciar el rendimiento de tus cultivos de forma sostenible.
+            </p>
+            <h5 class="catalog-subtitle text-uppercase mb-4" data-animate>NUESTRO CATÁLOGO</h5>
+        </div>
+
+        <!-- Nueva Línea Divisoria con Buscador Central -->
+        <div class="search-divider-row mb-5" data-animate>
+            <div class="divider-line"></div>
+            <div class="search-wrapper-central">
+                <input type="text" class="search-input-alt" placeholder="">
+                <i class="bi bi-search search-icon-alt"></i>
+            </div>
+            <div class="divider-line"></div>
+        </div>
+
+        <div class="row pt-2 g-0 justify-content-center">
+            <!-- Sidebar (Categorías) - A la izquierda del bloque central -->
+            <aside class="col-lg-2 sidebar-categories" data-animate>
+                <h3 class="category-title">Categorías</h3>
+                
+                <div class="category-list">
+                    <label class="category-item">
+                        <input type="checkbox">
+                        <span class="category-label">Bactericida</span>
+                    </label>
+                    <label class="category-item">
+                        <input type="checkbox">
+                        <span class="category-label">Bioestimulante</span>
+                    </label>
+                    <label class="category-item">
+                        <input type="checkbox">
+                        <span class="category-label">Fungicida</span>
+                    </label>
+                    <label class="category-item">
+                        <input type="checkbox">
+                        <span class="category-label">Insecticida</span>
+                    </label>
+                    <label class="category-item">
+                        <input type="checkbox">
+                        <span class="category-label">Nematicida</span>
+                    </label>
+                    <label class="category-item">
+                        <input type="checkbox">
+                        <span class="category-label">Nutricionales</span>
+                    </label>
+                </div>
+            </aside>
+
+            <!-- Grid de Productos (Bloque Central) -->
+            <main class="col-lg-8 px-lg-4">
+                <div class="row g-4">
+                    <!-- Producto 1 -->
+                    <div class="col-md-6 col-xl-4" data-animate>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1628352081506-83c43123ed6d?q=80&w=800&auto=format&fit=crop" alt="Bio-Estimulante Plus" class="product-img">
+                            </div>
+                            <div class="card-body p-4 text-start">
+                                <h5 class="product-title">Bio-Estimulante Plus</h5>
+                                <p class="product-desc">Mejora la absorción de nutrientes y fortalece el sistema radicular de las plantas.</p>
+                                <a href="#" class="btn-details">Ver detalles</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 2 -->
+                    <div class="col-md-6 col-xl-4" data-animate>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=800&auto=format&fit=crop" alt="Ferti-Nativa Orgánico" class="product-img">
+                            </div>
+                            <div class="card-body p-4 text-start">
+                                <h5 class="product-title">Ferti-Nativa Orgánico</h5>
+                                <p class="product-desc">Fertilizante 100% orgánico certificado para todo tipo de cultivos intensivos.</p>
+                                <a href="#" class="btn-details">Ver detalles</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 3 -->
+                    <div class="col-md-6 col-xl-4" data-animate>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1592419044706-39796d40f98c?q=80&w=800&auto=format&fit=crop" alt="Protector Solar Foliar" class="product-img">
+                            </div>
+                            <div class="card-body p-4 text-start">
+                                <h5 class="product-title">Protector Solar Foliar</h5>
+                                <p class="product-desc">Reduce el estrés térmico y protege las hojas contra la radiación UV excesiva.</p>
+                                <a href="#" class="btn-details">Ver detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Espacio de equilibrio para centrar los productos (col-2) -->
+            <div class="col-lg-2 d-none d-lg-block"></div>
+        </div>
+    </div>
+</section>
+{% endblock %}

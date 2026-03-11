@@ -14,16 +14,21 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate-in');
-                // Una vez animado, dejamos de observar para ahorrar recursos
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Seleccionamos todos los elementos con el atributo data-animate o las clases de animación
-    document.querySelectorAll('[data-animate], .animate-in-init').forEach(el => {
-        observer.observe(el);
-    });
+    /**
+     * Inicializa la observación de elementos animados.
+     * Se puede llamar de nuevo si se carga contenido dinámico (AJAX).
+     */
+    const initAnimations = () => {
+        const elements = document.querySelectorAll('[data-animate]:not(.animate-in), .animate-in-init:not(.animate-in)');
+        elements.forEach(el => observer.observe(el));
+    };
+
+    initAnimations();
 
     // ══════════ LÓGICA DEL MEGA MENÚ ══════════
     const btnMega = document.getElementById('btn-mega-menu');
@@ -31,19 +36,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const megaDimmer = document.getElementById('megaDimmer');
 
     if (btnMega && megaNav && megaDimmer) {
+        /**
+         * Controla la apertura y cierre del mega menú.
+         * @param {boolean} forceClose - Si es true, cierra el menú sin importar el estado actual.
+         */
         const toggleMega = (forceClose = false) => {
-            const isOpen = forceClose ? false : megaNav.classList.toggle('open');
+            const isOpen = forceClose ? false : !megaNav.classList.contains('open');
 
-            if (forceClose) {
-                megaNav.classList.remove('open');
-                btnMega.classList.remove('active');
-                megaDimmer.classList.remove('active');
-                document.body.style.overflow = '';
-            } else {
-                btnMega.classList.toggle('active', isOpen);
-                megaDimmer.classList.toggle('active', isOpen);
-                document.body.style.overflow = isOpen ? 'hidden' : '';
-            }
+            // Aplicar estados a las clases
+            megaNav.classList.toggle('open', isOpen);
+            btnMega.classList.toggle('active', isOpen);
+            megaDimmer.classList.toggle('active', isOpen);
+
+            // Control de scroll y accesibilidad
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+            btnMega.setAttribute('aria-expanded', isOpen);
         };
 
         btnMega.addEventListener('click', (e) => {
@@ -56,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Cerrar al hacer clic fuera
         document.addEventListener('click', (e) => {
-            if (!megaNav.contains(e.target) && e.target !== btnMega) {
+            if (megaNav.classList.contains('open') && !megaNav.contains(e.target) && e.target !== btnMega) {
                 toggleMega(true);
             }
         });
